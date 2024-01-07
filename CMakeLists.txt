@@ -10,7 +10,8 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(CMakeSFMLProject src/main.cpp)
+include_directories(headers)
+add_executable(CMakeSFMLProject src/main.cpp src/ball.cpp src/paddle.cpp headers/ball.hpp headers/paddle.hpp)
 target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics)
 target_compile_features(CMakeSFMLProject PRIVATE cxx_std_17)
 
